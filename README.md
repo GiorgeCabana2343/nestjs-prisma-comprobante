@@ -105,7 +105,7 @@ Todos los endpoints deben ser prefijados con la **Base URL de la API:** `http://
     { "question": "¿Cuál es el total de todas las facturas?" }
     ```
 * **Descripción:** Envía una pregunta en lenguaje natural al módulo de IA para obtener análisis y respuestas sobre los datos de los vouchers.
-* **Esperado:** `200 OK` y una respuesta JSON que contenga el resultado de la consulta de IA (ej., `{ "answer": "El total de todas las facturas es $X.XX" }`).
+* **Esperado:** `200 OK` y una respuesta JSON que contenga el resultado de la consulta de IA (ej., `{ "El total de todas las facturas es $X.XX" }`).
 
     **preguntas que puedes probar:**
     * `{ "question": "¿Cuál es el total de todas las boletas?" }`
