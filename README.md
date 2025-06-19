@@ -1,4 +1,4 @@
-# 🚀 Pruebas de API para la Aplicación Backend de Vouchers
+# 🚀 Pruebas de API para la Aplicación Backend del Registro de Comprabante 
 
 Este documento describe cómo realizar pruebas y verificar las funcionalidades de la API de gestión de vouchers utilizando Postman (o cualquier cliente REST compatible).
 
@@ -32,7 +32,6 @@ Todos los endpoints deben ser prefijados con la **Base URL de la API:** `http://
       "amount": 50.00,
       "issueDate": "2025-06-18",
       "documentType": "FACTURA"
-      // Incluye aquí todos los campos que tu DTO de creación de voucher (ej. voucher.dto.ts) espere.
     }
     ```
 * **Esperado:** Un código de estado `201 Created` y los datos del voucher creado.
@@ -77,7 +76,7 @@ Todos los endpoints deben ser prefijados con la **Base URL de la API:** `http://
       "state": "validated"
     }
     ```
-* **Esperado:** `200 OK` y los datos actualizados del voucher.
+* **Esperado:** `200 OK` y los datos actualizado del voucher.
 
 ---
 
@@ -87,9 +86,14 @@ Todos los endpoints deben ser prefijados con la **Base URL de la API:** `http://
 * **Método:** `GET`
 * **URL:** `/voucher/export-csv?state=pending&documentType=FACTURA`
 * **Descripción:** Genera un archivo CSV de vouchers, filtrados por estado 'pending' y tipo de documento 'FACTURA'.
-* **Esperado:** Un código de estado `200 OK` y la **descarga directa de un archivo CSV** en tu cliente Postman.
+* **Proceso en Postman:**
+    1.  Configura la petición `GET` con la URL y los parámetros de consulta deseados.
+    2.  Haz clic en el botón **"Send"** (Enviar).
+    3.  En la ventana de respuesta, Postman detectará que la respuesta es un archivo CSV (debido al `Content-Type: text/csv` y `Content-Disposition: attachment`).
+    4.  Verás un botón **"Send and Download"** (o similar, dependiendo de la versión de Postman) o una opción para **"Download"** la respuesta en la sección del cuerpo de la respuesta. Haz clic en él para guardar el archivo `.csv` en tu equipo.
 
----
+* **Esperado:** Un código de estado `200 OK` y la descarga directa de un archivo `.csv` en tu cliente Postman. El contenido del archivo será una tabla de datos de vouchers.
+
 
 ### **3. Consultas Avanzadas con IA (`/voucher/OPEN-IA`)**
 
