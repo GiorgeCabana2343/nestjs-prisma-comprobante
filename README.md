@@ -87,10 +87,10 @@ Todos los endpoints deben ser prefijados con la **Base URL de la API:** `http://
 * **URL:** `/voucher/export-csv?state=pending&documentType=FACTURA`
 * **Descripción:** Genera un archivo CSV de vouchers, filtrados por estado 'pending' y tipo de documento 'FACTURA'.
 * **Proceso en Postman:**
-    1.  Configura la petición `GET` con la URL y los parámetros de consulta deseados.
-    2.  Haz clic en el botón **"Send"** (Enviar).
-    3.  En la ventana de respuesta, Postman detectará que la respuesta es un archivo CSV (debido al `Content-Type: text/csv` y `Content-Disposition: attachment`).
-    4.  Verás un botón **"Send and Download"** (o similar, dependiendo de la versión de Postman) o una opción para **"Download"** la respuesta en la sección del cuerpo de la respuesta. Haz clic en él para guardar el archivo `.csv` en tu equipo.
+    Configura la petición `GET` con la URL y los parámetros de consulta deseados.
+    Haz clic en el botón **"Send"** (Enviar).
+    En la ventana de respuesta, Postman detectará que la respuesta es un archivo CSV (debido al `Content-Type: text/csv` y `Content-Disposition: attachment`).
+    Verás un botón **"Send and Download"** (o similar, dependiendo de la versión de Postman) o una opción para **"Download"** la respuesta en la sección del cuerpo de la respuesta. Haz clic en él para guardar el archivo `.csv` en tu equipo.
 
 * **Esperado:** Un código de estado `200 OK` y la descarga directa de un archivo `.csv` en tu cliente Postman. El contenido del archivo será una tabla de datos de vouchers.
 
